@@ -32,10 +32,6 @@ public class LibrarianController {
     library.addBook(new AudioBook(title));
   }
 
-  public void RareBook(String title) {
-    library.addBook(new RareBook(title));
-  }
-
   public void addMember(String name) {
     library.addMember(new Member(name)); // Member class constructor dependency
   }
