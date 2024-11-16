@@ -17,6 +17,7 @@ public class TestPaperBook {
 		
 		assertEquals(book.getClass().getName(), "lab5.PaperBook");
 		assertTrue(book instanceof lab5.Book);
+		
 	}
 	
 	
