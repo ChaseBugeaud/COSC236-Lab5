@@ -20,7 +20,7 @@ public class LibrarianController {
     library.showMembers();
   }
 
-  public void addBook(String title) {
+  public void addPaperBook(String title) {
     library.addBook(new PaperBook(title)); // Book class constructor dependency
   }
 
