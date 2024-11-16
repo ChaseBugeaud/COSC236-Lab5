@@ -11,7 +11,19 @@ public class LibraryApp {
   }
 
   private static void addBook(String title) {
-    librarian.addBook(title);
+    librarian.addPaperBook(title);
+  }
+
+  private static void addAudioBook(String title) {
+    librarian.addAudioBook(title);
+  }
+
+  private static void addEBook(String title) {
+    librarian.addEbook(title);
+  }
+
+  private static void addPaperBook(String title) {
+    librarian.addPaperBook(title);
   }
 
   private static void borrowBook(String title, String name) {
@@ -36,9 +48,9 @@ public class LibraryApp {
 
     // Adding some books to the catalog
     System.out.println("\n *** Adding books to the library:");
-    librarian.addBook("Dune");
-    librarian.addBook("1984");
-    librarian.addBook("Moby Dick");
+    librarian.addPaperBook("Dune");
+    librarian.addEbook("1984");
+    librarian.addAudioBook("Moby Dick");
 
     // Adding members to the library
     System.out.println("\n *** Adding members to the library:");

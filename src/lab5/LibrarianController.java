@@ -28,7 +28,7 @@ public class LibrarianController {
     library.addBook(new Ebook(title));
   }
 
-  public void AudioBook(String title) {
+  public void addAudioBook(String title) {
     library.addBook(new AudioBook(title));
   }
 
