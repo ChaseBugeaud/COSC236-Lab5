@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test;
 import lab5.Member;
 import lab5.PaperBook;
 import lab5.Library;
-
+import lab5.Book;
 
 class TestRemoveMemberWithBooks {
 
 	Library library;
 	Member member;
-	PaperBook book1;
-	PaperBook book2;
-	PaperBook book3;
+	Book book1;
+	Book book2;
+	Book book3;
 
 	@BeforeEach
 	void setUp() throws Exception {
