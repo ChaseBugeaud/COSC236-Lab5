@@ -1,10 +1,9 @@
 package lab5;
 
-public interface BorrowingServiceAPI {
-	public boolean borrowBook(Member member, Book book);
-	
+import java.util.ArrayList;
 
-	public boolean returnBook(Member member, Book book); 
+public interface BorrowingServiceAPI {
+	public void borrowBook(Book book,ArrayList<Book> arrBooks);
 	
-	
+	public void returnBook(Book book, ArrayList<Book> arrBooks); 
 }
