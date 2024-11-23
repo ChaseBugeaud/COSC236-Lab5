@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Member {
-<<<<<<< HEAD
+
 
   private String name;
   private ArrayList<Book> borrowedBooks; // Book class dependency

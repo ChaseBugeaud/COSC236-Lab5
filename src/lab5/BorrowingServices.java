@@ -1,21 +1,23 @@
 package lab5;
 
+import java.util.ArrayList;
+
 public class BorrowingServices implements BorrowingServiceAPI {
-
+	
+	
 	@Override
-	public boolean borrowBook(Member member, Book book) {
-		if (book != null && member != null) {
-		      member.borrowBook(book); // member borrows a book, not library
-		}else{
-		    return  false;
+	public void borrowBook(Book book, ArrayList<Book> arrBooks) {
+		if (book != null && book.getIsAvailable() == true) {
+			arrBooks.add(book);
+			book.setIsAvailable(false);
 		}
-		return true;
 	}
-
 	@Override
-	public boolean returnBook(Member member, Book book) {
-		
-		return false;
+	public void returnBook(Book book, ArrayList<Book> arrBooks) {
+		if (book != null) {
+			arrBooks.remove(book);
+			book.setIsAvailable(true);
+		}
 	}
 	
 
