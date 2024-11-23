@@ -1,0 +1,18 @@
+CodeChangesTask4.txt
+1. Key Changes: 
+  a) Ebook, AudioBook, RareBook, and PaperBook classes made - all implementing Book interface.
+  b) LibraryApp.java has specific addEbook, addPaperBook, etc. methods instead of a general addBook method.
+  c) Test cases were created to ensure all new features are working as intended.
+
+2. Why DIP is preferred for book borrowing:
+  a) What changed are needed to support renting items such as rooms, laptops, and video DVDs?
+        To support renting additional items, more classes for each new individual item would need 
+        to be created, the LibrarianController would need to have additional methods to handle
+        these new items, and the LibraryApp needs to implement the new methods. 
+  b) How would test cases be modified to support these new rental types?
+        Test cases would include borrowing and returning of these new items, guaranteeing the additional 
+        features work as intended.
+  c) How would you implement this extended functionality if the DIP was not applied? Discuss the impact this would have on maintainability and flexibility.
+        If DIP was not applied, this extended functionality would not implement a generalized interface 
+        that allows items to be borrowed. As scope creeps, having too many interfaces may cause some 
+        issues when unnecessarily maintaining too many unique interfaces. 
