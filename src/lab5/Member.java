@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Member {
-
+	
 	private String name;
 	private ArrayList<Book> borrowedBooks; // Book class dependency
+	
 	
 	public Member(String name) {
 		this.name = name;
@@ -25,17 +26,20 @@ public class Member {
 		return "Member: " + name;
 	}
 	public void borrowBook(Book book) {
+		BorrowingServices borrowService = new BorrowingServices();
 		if (book != null && book.getIsAvailable() == true) {
-			borrowedBooks.add(book);
+			borrowService.borrowBook(book,borrowedBooks);
 			book.setIsAvailable(false);
 		}
 	}
 	public void returnBook(Book book) {
+	BorrowingServices borrowService = new BorrowingServices();
 		if (book != null) {
-			borrowedBooks.remove(book);
+			borrowService.returnBook(book,borrowedBooks);
 			book.setIsAvailable(true);
 		}
 	}
+	
 	public void listBorrowedBooks() {
 		for (Book book : borrowedBooks)
 			System.out.println(book); // book.toString()
