@@ -37,7 +37,9 @@ public class Library {
 	}
 	public void removeMember(Member member) {
 		if(member != null) {
-			member.returnAllBooks(); // return all member's books to the library
+			if(member.borrowedBooksCount() > 0) {
+				member.returnAllBooks(); // return all member's books to the library
+			}
 			members.remove(member);
 		}
 	}
