@@ -7,10 +7,13 @@ public class Member {
 
   private String name;
   private ArrayList<Book> borrowedBooks; // Book class dependency
-
-  public Member(String name) {
+  private BorrowingServices borrowingServices;
+  
+  public Member(String name, BorrowingServices service) {
     this.name = name;
     this.borrowedBooks = new ArrayList<>();
+    this.borrowingServices = service;
+    
   }
 
   public String getName() {
@@ -30,13 +33,11 @@ public class Member {
   }
 
   public void borrowBook(Book book) {
-    BorrowingServices borrowService = new BorrowingServices();
-    BorrowingBookResult result = borrowService.borrowBook(book, borrowedBooks);
+    BorrowingBookResult result = borrowingServices.borrowBook(book, borrowedBooks);
   }
 
   public void returnBook(Book book) {
-    BorrowingServices borrowService = new BorrowingServices();
-    BorrowingBookResult result = borrowService.returnBook(book, borrowedBooks);
+    BorrowingBookResult result = borrowingServices.returnBook(book, borrowedBooks);
   }
 
   public void listBorrowedBooks() {

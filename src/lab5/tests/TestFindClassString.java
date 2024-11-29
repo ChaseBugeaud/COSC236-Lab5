@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import lab5.PaperBook;
 import lab5.Book;
+import lab5.BorrowingServices;
 import lab5.Library;
 import lab5.Member;
 
@@ -20,9 +21,9 @@ private Library library;
 	void setUp() throws Exception {
 		 this.library = new Library(); // empty library for each test
 	}
-	
-	Member member1 = new Member("Dude");
-	Member member2 = new Member("Gal");
+	BorrowingServices service = BorrowingServices.getInstance();
+	Member member1 = new Member("Dude", service);
+	Member member2 = new Member("Gal", service);
 	Book book1 = new PaperBook("Dune");
 	Book book2 = new PaperBook("1984");
 

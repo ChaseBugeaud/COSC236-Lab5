@@ -8,6 +8,7 @@ import lab5.Member;
 import lab5.PaperBook;
 import lab5.Library;
 import lab5.Book;
+import lab5.BorrowingServices;
 
 class TestRemoveMemberWithBooks {
 
@@ -16,14 +17,14 @@ class TestRemoveMemberWithBooks {
 	Book book1;
 	Book book2;
 	Book book3;
-
+	BorrowingServices service = BorrowingServices.getInstance();
 	@BeforeEach
 	void setUp() throws Exception {
 		this.library = new Library(); // Fresh library: one member, two tests
 		book1 = new PaperBook("Dune");
 		book2 = new PaperBook("1984");
 		book3 = new PaperBook("Moby Dick");
-		member = new Member("Dude");
+		member = new Member("Dude", service);
 		library.addMember(member);
 		library.addBook(book1);
 		library.addBook(book2);

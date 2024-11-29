@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 
 import lab5.Book;
+import lab5.BorrowingServices;
 import lab5.Member;
 import lab5.PaperBook;
 
@@ -14,14 +15,15 @@ class TestBorrowBooks {
 
 	Member member1;
 	Member member2;
-	
+	BorrowingServices service = BorrowingServices.getInstance();
 	Book book1 = new PaperBook("Dune");
 	Book book2 = new PaperBook("1984");
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		member1 = new Member("Alice"); // flush borrowedBook array 
-		member2 = new Member("Bob");   // flush borrowedBook array 
+		
+		member1 = new Member("Alice", service); // flush borrowedBook array 
+		member2 = new Member("Bob", service);   // flush borrowedBook array 
 		book1.setIsAvailable(true);
 		book2.setIsAvailable(true);
 	}
