@@ -43,8 +43,8 @@ public class BorrowingServices implements BorrowingServiceAPI {
     Book book = borrowedBooks.get(0);
     Iterator<Book> bookIterator = borrowedBooks.iterator();
     while (bookIterator.hasNext()) {
-      book.setIsAvailable(true);
       book = bookIterator.next();
+      book.setIsAvailable(true);
     }
     System.out.println("All books cleared");
     borrowedBooks.clear();
