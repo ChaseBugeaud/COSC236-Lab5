@@ -28,7 +28,7 @@ public class BorrowingBookResult {
 
   // Accessor methods
   public boolean isSuccess() {
-    return this.isSuccess();
+    return this.isSuccess;
   }
 
   public String getBorrowingMessage() {
