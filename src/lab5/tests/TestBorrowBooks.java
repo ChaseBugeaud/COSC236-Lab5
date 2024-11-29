@@ -18,14 +18,21 @@ class TestBorrowBooks {
 	BorrowingServices service = BorrowingServices.getInstance();
 	Book book1 = new PaperBook("Dune");
 	Book book2 = new PaperBook("1984");
+	Book book3 = new PaperBook("Another One");
+	Book book4 = new PaperBook("Vlad the impalor");
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		
 		member1 = new Member("Alice", service); // flush borrowedBook array 
 		member2 = new Member("Bob", service);   // flush borrowedBook array 
+		
+		
+		
 		book1.setIsAvailable(true);
 		book2.setIsAvailable(true);
+		
+		
 	}
 	@Test
 	void borrowBookBook() {
@@ -42,6 +49,12 @@ class TestBorrowBooks {
 		member1.borrowBook(book2);
 		assertFalse(book1.getIsAvailable(), "Book should not be available");
 		assertEquals(member1.borrowedBooksCount(), 2, "The book coubnt shoud be 2");
+		
+		
+		// borrow thrid book 
+		
+		
+		
 	}
 	
 	@Test
@@ -65,6 +78,15 @@ class TestBorrowBooks {
 		member1.returnBook(book2);
 		assertTrue(book2.getIsAvailable(), "Book should be available after return");
 		assertEquals(member1.borrowedBooksCount(), 0, "Member 1 should have no books");
+		
+	}
+	@Test
+	void testBook() {
+		member1.borrowBook(book1);
+		member1.borrowBook(book2);
+		member1.borrowBook(book3);
+		member1.borrowBook(book4);
+		assertEquals(member1.borrowedBooksCount(), 3, "You can only borrow 3 books!");
 		
 	}
 
