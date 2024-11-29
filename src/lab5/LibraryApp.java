@@ -72,9 +72,9 @@ public class LibraryApp {
     librarian.borrowBookByMember("Dune", "Bob"); // will be successful
     System.out.println("\n *** Books borrowed by Bob:");
     librarian.showMemberBooks("Bob");
-    
+
     librarian.returnAllBorrowedBooks("Bob");
-    System.out.println("*Should clear all bobs books so nothing will be after this*");
+    System.out.println("*Should clear all bob's books so nothing will be after this*");
     librarian.showMemberBooks("Bob");
   }
 
