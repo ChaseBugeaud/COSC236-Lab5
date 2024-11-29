@@ -1,0 +1,15 @@
+CodeChangesTask5.txt
+1. How you ensured that the Member class adheres to the Single Responsibility Principle after the changes.
+      We have ensured that our Member class adheres to the SRP after changes by abstracting methods such as 
+      returnBook(), returnAllBorrowedBooks(), and borrowBook(). This way, the member class itself isn't 
+      responsible for managing its own rentals, but that task is delegated to the BorrowingServices class.
+
+2. Why would you choose the particular abstraction or class for handling borrowing functionality? Can you suggest other solutions?
+       We chose the BorrowingServices class for handling borrowing functionality as it seemed like the most 
+       logical solution to adhere to the SRP. We could have delegated these tasks to a further upstream 
+       class, such as Library, but we believed the former option was the optimal approach to implementing 
+       GRASP principles.
+
+3. Any challenges or trade-offs you encountered while applying the Dependency Inversion Principle and Single Responsibility Principle.
+       While implementing DIP and SRP, we encountered challenges with version control. After sorting these 
+       issues out, applying the aforementioned principles was relatively trivial. 
