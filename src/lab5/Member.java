@@ -32,7 +32,6 @@ public class Member {
   public void borrowBook(Book book) {
     BorrowingServices borrowService = new BorrowingServices();
     borrowService.borrowBook(book, borrowedBooks);
-
   }
 
   public void returnBook(Book book) {
