@@ -31,12 +31,12 @@ public class Member {
 
   public void borrowBook(Book book) {
     BorrowingServices borrowService = new BorrowingServices();
-    borrowService.borrowBook(book, borrowedBooks);
+    BorrowingBookResult result = borrowService.borrowBook(book, borrowedBooks);
   }
 
   public void returnBook(Book book) {
     BorrowingServices borrowService = new BorrowingServices();
-    borrowService.returnBook(book, borrowedBooks);
+    BorrowingBookResult result = borrowService.returnBook(book, borrowedBooks);
   }
 
   public void listBorrowedBooks() {
