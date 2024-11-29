@@ -44,8 +44,8 @@ public class Member {
 		return borrowedBooks.size();
 	}
 	
-	public void returnAllBooks(Book book) {
+	public void returnAllBooks() {
 		BorrowingServices borrowService = new BorrowingServices();
-		borrowService.returnAllBooks(book, borrowedBooks);
+		borrowService.returnAllBorrowedBooks(borrowedBooks);
 	}
 }

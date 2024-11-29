@@ -21,13 +21,17 @@ public class BorrowingServices implements BorrowingServiceAPI {
 		}
 	}
 	@Override
-	public void returnAllBorrowedBooks(Book book, ArrayList<Book> arrBooks) {
-		Iterator<Book> bookIterator = arrBooks.iterator();
-	    while(bookIterator.hasNext()) {
-		   	 book = bookIterator.next();
-		   	 book.setIsAvailable(true);
-	    }
-	    arrBooks.clear(); // clear array of borrowed books
+	public void returnAllBorrowedBooks(ArrayList<Book> borrowedBooks) {
+		Book book = borrowedBooks.get(0);
+		Iterator<Book> bookIterator = borrowedBooks.iterator();
+		while(bookIterator.hasNext()) {
+			book.setIsAvailable(true);
+			book = bookIterator.next();
+		}
+		System.out.println("All books cleared");
+		
+	    borrowedBooks.clear();
+		
 	}
 
 

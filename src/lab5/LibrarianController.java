@@ -85,4 +85,9 @@ public class LibrarianController {
     else
       System.out.println("Either book " + title + " or member " + name + " not found.");
   }
+  
+  public void returnAllBorrowedBooks(String name) {
+	  Member member = library.findMemberByName(name);
+	  member.returnAllBooks();
+  }
 }
