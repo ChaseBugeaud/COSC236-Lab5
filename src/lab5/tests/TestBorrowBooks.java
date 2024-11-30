@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
+import lab5.AudioBook;
 import lab5.Book;
 import lab5.BorrowingServices;
 import lab5.Member;
@@ -20,6 +20,8 @@ class TestBorrowBooks {
 	Book book2 = new PaperBook("1984");
 	Book book3 = new PaperBook("Another One");
 	Book book4 = new PaperBook("Vlad the impalor");
+	Book book5 = new AudioBook("sweet lulaby's with liam");
+			
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -87,7 +89,10 @@ class TestBorrowBooks {
 		member1.borrowBook(book3);
 		member1.borrowBook(book4);
 		assertEquals(member1.borrowedBooksCount(), 3, "You can only borrow 3 books!");
+		member1.returnBook(book5);
+		member2.borrowBook(book1);
 		
+
 	}
 
 }

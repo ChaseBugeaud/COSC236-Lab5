@@ -34,10 +34,12 @@ public class Member {
 
   public void borrowBook(Book book) {
     BorrowingBookResult result = borrowingServices.borrowBook(book, borrowedBooks);
+    System.out.println(result);
   }
 
   public void returnBook(Book book) {
     BorrowingBookResult result = borrowingServices.returnBook(book, borrowedBooks);
+    System.out.println(result);
   }
 
   public void listBorrowedBooks() {
