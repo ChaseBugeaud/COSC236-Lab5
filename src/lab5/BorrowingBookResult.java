@@ -34,8 +34,8 @@ public class BorrowingBookResult {
   public String getBorrowingMessage() {
     return this.borrowingMessage;
   }
-  public String toString() {
-	  return getBorrowingMessage();
-  }
 
+  public String toString() {
+    return getBorrowingMessage();
+  }
 }
