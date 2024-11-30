@@ -77,7 +77,6 @@ public class LibrarianController {
 		else
 			System.out.println("Member " + name + " not found.");
 	}
-
 	public void borrowBookByMember(String title, String name) {
 		Member member = library.findMemberByName(name); // use library for search
 		Book book = library.findBookByTitle(title); // use library for search

@@ -1,7 +1,7 @@
 package lab5.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test; // Use JUnit 5's Test annotation
+import org.junit.jupiter.api.Test;
 import lab5.BorrowingServices;
 
 class TestSingleton {
