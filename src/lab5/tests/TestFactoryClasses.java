@@ -1,17 +1,16 @@
 package lab5.tests;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 import lab5.AudioBook;
-import lab5.Book;
-import lab5.BorrowingServices;
 import lab5.Ebook;
 import lab5.LibrarianController;
 import lab5.Library;
 import lab5.PaperBook;
 import lab5.PaperBookFactory;
+import lab5.RareBookFactory;
 
 public class TestFactoryClasses {
 	
@@ -35,6 +34,11 @@ public class TestFactoryClasses {
 		assertTrue(libraryTest.findBookByTitle("Kody") instanceof Ebook);
 		assertTrue(libraryTest.findBookByTitle("Dune") instanceof PaperBook);
 		
+		
+		RareBookFactory rareFac = new RareBookFactory();
+		
+		librarian.addBook(rareFac, "Dune2");
+		assertEquals(libraryTest.booksCount(), 4);
 	
 	}
 }

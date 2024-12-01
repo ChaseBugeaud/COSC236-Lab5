@@ -30,7 +30,12 @@ public class Library {
 		members.add(member);
 	}
 	public void addBook(Book book) {
-		catalog.add(book);
+		if(book != null) {
+			catalog.add(book);
+		}else {
+			System.out.println(book + " is unsupported or null");
+		}
+		
 	}
 	public void removeMember(String name) {
 		Member member = findMemberByName(name);
